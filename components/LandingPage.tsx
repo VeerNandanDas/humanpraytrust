@@ -308,7 +308,7 @@ function AboutUs() {
               Founded on the belief that every life holds intrinsic value, <strong style={{ color: C.charcoal }}>Human Pray Trust</strong> is a relentless force for dignity across India. We don't just provide charity; we build bridges of compassion that empower the marginalized, heal the voiceless, and uplift entire communities.
             </p>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-              From rescuing abandoned animals on unforgiving streets to ensuring no child's birthday goes uncelebrated, our approach is holistic, transparent, and driven purely by the heart.
+              From rescuing abandoned animals on unforgiving streets to ensuring no child's special day goes uncelebrated, our approach is holistic, transparent, and driven purely by the heart.
             </p>
             
             <div className="grid grid-cols-2 gap-8 mb-10">
@@ -336,7 +336,7 @@ function AboutUs() {
 function ImpactCounters() {
   const stats = [
     { value: 12450, label: "Lives Touched", suffix: "+" },
-    { value: 847, label: "Birthday Celebrations", suffix: "" },
+    { value: 847, label: "Special Day Celebrations", suffix: "" },
     { value: 3200, label: "Animals Helped", suffix: "+" },
     { value: 156, label: "Villages Reached", suffix: "" },
   ];
@@ -532,15 +532,15 @@ function LiveCases() {
   );
 }
 
-/* ─── Birthday Mission ──────────────────────────────────── */
-function BirthdayMission() {
+/* ─── Special Day Mission ───────────────────────────────── */
+function SpecialDayMission() {
   const steps = [
     { icon: Search, title: "Find a Child", desc: "Identifying underprivileged children who have never celebrated their existence." },
     { icon: Gift, title: "Plan the Day", desc: "Curating a personalized day of joy, new clothes, and favourite meals." },
     { icon: Users, title: "Celebrate Together", desc: "Gathering community to show them they are seen, valued, and loved." },
   ];
   return (
-    <section id="birthday-mission" className="py-32" style={{ backgroundColor: C.cream }}>
+    <section id="special-day-mission" className="py-32" style={{ backgroundColor: C.cream }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -549,10 +549,10 @@ function BirthdayMission() {
               <span className="text-sm tracking-[0.2em] uppercase" style={{ color: C.saffron }}>Core Mission</span>
             </motion.div>
             <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl mb-8" style={{ fontFamily: "'Playfair Display', serif", color: C.charcoal }}>
-              The Birthday<br />Mission
+              The Special Day<br />Mission
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-gray-600 mb-12 leading-relaxed">
-              For millions of children, a birthday is just another day of survival. We believe every life deserves to be celebrated. A cake, a new dress, a day of feeling special — these small acts rebuild fractured self-worth.
+              For millions of children, a special day is just another day of survival. We believe every life deserves to be celebrated. A cake, a new dress, a day of feeling special — these small acts rebuild fractured self-worth.
             </motion.p>
             <div className="space-y-10">
               {steps.map((step, i) => (
@@ -915,7 +915,7 @@ function ContactSection() {
             </div>
             <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: "'Playfair Display', serif", color: C.charcoal }}>Let's Start a Conversation</h2>
             <p className="text-lg text-gray-600 mb-10">
-              Whether you want to celebrate a birthday, volunteer your time, or just say hello, we'd love to hear from you. Fill out the form and our team will get back to you promptly.
+              Whether you want to celebrate a special day, volunteer your time, or just say hello, we'd love to hear from you. Fill out the form and our team will get back to you promptly.
             </p>
             
             <div className="space-y-6">
@@ -934,7 +934,7 @@ function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Call Us / WhatsApp</h4>
-                  <p className="text-gray-600">+91 93544 30159</p>
+                  <p className="text-gray-600">+91 85108 04149</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -970,7 +970,7 @@ function ContactSection() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                 <select className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/50 transition-all text-gray-600 appearance-none">
-                  <option>Birthday Mission Inquiry</option>
+                  <option>Special Day Mission Inquiry</option>
                   <option>Volunteer Application</option>
                   <option>General Support</option>
                   <option>Other</option>
@@ -1002,7 +1002,7 @@ function CTASection() {
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
           <button style={{ backgroundColor: C.saffron }} className="w-full sm:w-auto text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:scale-105 transition-transform">
-            Celebrate a Birthday
+            Celebrate a Special Day
           </button>
           <button style={{ backgroundColor: C.green }} className="w-full sm:w-auto text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:scale-105 transition-transform">
             Rescue an Animal
@@ -1030,7 +1030,7 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-wider mb-6" style={{ color: C.charcoal }}>Explore</h4>
             <ul className="space-y-4 text-gray-500">
-              {["Our Work", "Birthday Mission", "Animal Welfare", "Volunteer"].map((link) => (
+              {["Our Work", "Special Day Mission", "Animal Welfare", "Volunteer"].map((link) => (
                 <li key={link}>
                   <a href={`#${link.toLowerCase().replace(" ", "-")}`} className="hover:text-black transition-colors">{link}</a>
                 </li>
@@ -1042,7 +1042,7 @@ function Footer() {
             <ul className="space-y-4 text-gray-500">
               <li className="flex items-center gap-3"><MapPin className="w-4 h-4 shrink-0" /> New Delhi, India</li>
               <li className="flex items-center gap-3"><Mail className="w-4 h-4 shrink-0" /> contact@humanpraytrust.org</li>
-              <li className="flex items-center gap-3"><Phone className="w-4 h-4 shrink-0" /> +91 93544 30159</li>
+              <li className="flex items-center gap-3"><Phone className="w-4 h-4 shrink-0" /> +91 85108 04149</li>
             </ul>
           </div>
         </div>
@@ -1073,7 +1073,7 @@ export default function LandingPage() {
         <Hero />
         <AboutUs />
         <ImpactCounters />
-        <BirthdayMission />
+        <SpecialDayMission />
         <LiveCases />
         <AnimalWelfare />
         <ActionCards />

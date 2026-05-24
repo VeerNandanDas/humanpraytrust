@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Human Pray Trust",
   description:
     "A quiet force for human dignity across India — celebrating lives, healing animals, and restoring hope one act at a time.",
-  keywords: ["NGO", "India", "charity", "human dignity", "animal welfare", "birthday mission"],
+  keywords: ["NGO", "India", "charity", "human dignity", "animal welfare", "special day mission"],
 };
 
 export default function RootLayout({

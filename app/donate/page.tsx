@@ -11,14 +11,14 @@ const IMPACT_MAP: Record<number, string> = {
   1000:  "Covers a child's school supplies 📚",
   2000:  "Provides medicine for a month 💊",
   5000:  "Funds an animal rescue operation 🐾",
-  10000: "Sponsors a birthday celebration 🎂",
+  10000: "Sponsors a special day celebration 🎂",
   21000: "Covers basic surgery support 🏥",
 };
 
 const CAUSES = [
   { id: "general", label: "Where Needed Most", emoji: "❤️" },
   { id: "medical", label: "Medical Aid", emoji: "🏥" },
-  { id: "birthday", label: "Birthday Mission", emoji: "🎂" },
+  { id: "birthday", label: "Special Day Mission", emoji: "🎂" },
   { id: "animal",   label: "Animal Welfare",   emoji: "🐾" },
   { id: "education",label: "Education",         emoji: "📚" },
 ];
@@ -353,7 +353,7 @@ export default function DonatePage() {
                 {[
                   { key: "name",  label: "Full Name *",     placeholder: "Rajesh Kumar",           type: "text",  required: true },
                   { key: "email", label: "Email Address *",  placeholder: "you@example.com",        type: "email", required: true },
-                  { key: "phone", label: "Phone Number",     placeholder: "+91 93544 30159",         type: "tel",   required: false },
+                  { key: "phone", label: "Phone Number",     placeholder: "+91 85108 04149",         type: "tel",   required: false },
                   { key: "pan",   label: "PAN Card (for 80G Certificate)", placeholder: "ABCDE1234F", type: "text", required: false },
                 ].map(f => (
                   <div key={f.key} style={{ marginBottom: 16 }}>
@@ -718,7 +718,7 @@ export default function DonatePage() {
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 12 }}>
               <a 
-                href={`https://wa.me/919354430159?text=${encodeURIComponent(
+                href={`https://wa.me/918510804149?text=${encodeURIComponent(
                   selectedCase 
                     ? `Hi! I've just made a direct donation of ₹${directAmount || finalAmount || "___"} for the case of "${selectedCase}" to Human Pray Trust. Please find attached my payment screenshot for verification.`
                     : `Hi! I've just made a direct donation of ₹${directAmount || finalAmount || "___"} towards "${dynamicCauses.find(c => c.id === cause)?.label || "Where Needed Most"}" to Human Pray Trust. Please find attached my payment screenshot for verification.`
