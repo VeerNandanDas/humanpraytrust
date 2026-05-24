@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1779626856635",
+    "title": "Help XYZ",
+    "patientName": "XYZ OA",
+    "location": "delhi",
+    "urgency": "medium",
+    "description": "help him to get treatment",
+    "goalAmount": 99998,
+    "raisedAmount": 0,
+    "imageUrl": "/uploads/images/1779626856624_dymatize.webp",
+    "documentUrl": "/uploads/documents/1779626856629_human_trust_logo.jpg.jpeg",
+    "documentName": "human trust logo.jpg.jpeg",
+    "createdAt": "2026-05-24T12:47:36.635Z",
+    "isActive": true
+  }
+]

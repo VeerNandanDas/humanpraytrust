@@ -1,0 +1,21 @@
+kind = "web"
+previewPath = "/website/"
+title = "Human Pray Trust — Website"
+version = "1.0.0"
+id = "artifacts/website"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/website/" ]
+localPort = 19161
+
+[services.development]
+run = "pnpm --filter @workspace/website run dev"
+
+[services.env]
+PORT = "19161"
