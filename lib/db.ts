@@ -1,0 +1,61 @@
+import mysql from "mysql2/promise";
+
+const isDbConfigured = !!(
+  process.env.MYSQL_HOST &&
+  process.env.MYSQL_USER &&
+  process.env.MYSQL_PASSWORD &&
+  process.env.MYSQL_DATABASE
+);
+
+let pool: mysql.Pool | null = null;
+let initialized = false;
+
+export async function getDbPool(): Promise<mysql.Pool | null> {
+  if (!isDbConfigured) return null;
+  
+  if (!pool) {
+    pool = mysql.createPool({
+      host: process.env.MYSQL_HOST,
+      user: process.env.MYSQL_USER,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DATABASE,
+      port: parseInt(process.env.MYSQL_PORT || "3306"),
+      waitForConnections: true,
+      connectionLimit: 5,
+      queueLimit: 0,
+    });
+  }
+
+  if (!initialized && pool) {
+    try {
+      const connection = await pool.getConnection();
+      await connection.query(`
+        CREATE TABLE IF NOT EXISTS cases (
+          id VARCHAR(255) PRIMARY KEY,
+          title VARCHAR(255) NOT NULL,
+          patientName VARCHAR(255) DEFAULT '',
+          location VARCHAR(255) DEFAULT '',
+          urgency VARCHAR(50) DEFAULT 'medium',
+          description TEXT,
+          goalAmount DOUBLE DEFAULT 0,
+          raisedAmount DOUBLE DEFAULT 0,
+          imageUrl LONGTEXT,
+          documentUrl LONGTEXT,
+          documentName VARCHAR(255) DEFAULT '',
+          createdAt VARCHAR(255),
+          isActive TINYINT(1) DEFAULT 1
+        )
+      `);
+      // Defensive schema migration: upgrade TEXT to LONGTEXT to support large Base64 uploads
+      await connection.query("ALTER TABLE cases MODIFY imageUrl LONGTEXT");
+      await connection.query("ALTER TABLE cases MODIFY documentUrl LONGTEXT");
+      connection.release();
+      initialized = true;
+      console.log("Database initialized successfully: 'cases' table synced.");
+    } catch (err) {
+      console.error("Database connection / initialization failed:", err);
+    }
+  }
+
+  return pool;
+}
